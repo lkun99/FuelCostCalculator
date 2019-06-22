@@ -11,6 +11,7 @@ import { FormsComponent } from './components/containers/forms/forms.component';
 import { ResultComponent } from './components/forms/result/result.component';
 import {FooterComponent} from './components/layout/footer/footer.component';
 import { BarsComponent } from './components/forms/bars/bars.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BarsComponent } from './components/forms/bars/bars.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

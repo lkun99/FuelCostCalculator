@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-fuel-wear',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuelWearComponent implements OnInit {
 
+  @Output()
+  wearOut: EventEmitter<number> = new EventEmitter();
+  public wear: number;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  getPrice() {
+    this.wearOut.emit(this.wear);
+  }
 }
