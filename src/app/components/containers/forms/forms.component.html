@@ -1,5 +1,13 @@
 <div class="container-fluid">
-  <app-fuel-price></app-fuel-price>
-  <app-fuel-wear></app-fuel-wear>
-  <app-distance></app-distance>
+  <div class="row">
+    <div class="col-lg-4 p-4 bg-info">
+      <app-fuel-price></app-fuel-price>
+      <app-fuel-wear></app-fuel-wear>
+      <app-distance></app-distance>
+      <button class="btn btn-danger btn-block col-lg-12 mt-4">Oblicz</button>
+    </div>
+    <div class="col-lg-8 bg-secondary p-4">
+      <app-result></app-result>
+    </div>
+  </div>
 </div>

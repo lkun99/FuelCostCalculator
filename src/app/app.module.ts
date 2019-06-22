@@ -8,6 +8,9 @@ import { FuelWearComponent } from './components/forms/fuel-wear/fuel-wear.compon
 import { FuelPriceComponent } from './components/forms/fuel-price/fuel-price.component';
 import { DistanceComponent } from './components/forms/distance/distance.component';
 import { FormsComponent } from './components/containers/forms/forms.component';
+import { ResultComponent } from './components/forms/result/result.component';
+import {FooterComponent} from './components/layout/footer/footer.component';
+import { BarsComponent } from './components/forms/bars/bars.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FormsComponent } from './components/containers/forms/forms.component';
     FuelWearComponent,
     FuelPriceComponent,
     DistanceComponent,
-    FormsComponent
+    FormsComponent,
+    ResultComponent,
+    FooterComponent,
+    BarsComponent
   ],
   imports: [
     BrowserModule,
