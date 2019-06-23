@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4 p-4 bg-info">
-      <app-fuel-price></app-fuel-price>
-      <app-fuel-wear></app-fuel-wear>
-      <app-distance></app-distance>
-      <button (click)="getData()" class="btn btn-danger btn-block col-lg-12 mt-4">Oblicz</button>
+      <app-fuel-price (priceOut)="getPrice($event)"></app-fuel-price>
+      <app-fuel-wear (wearOut)="getWear($event)"></app-fuel-wear>
+      <app-distance (distanceOut)="getDistance($event)"></app-distance>
+      <button (click)="getData()" (click)="getDashboard()" class="btn btn-danger btn-block col-lg-12 mt-4">Oblicz</button>
     </div>
     <div class="col-lg-8 bg-secondary p-4">
-      <app-result></app-result>
+      <app-result [dashboard] = "dashboard" [cost] = "cost"></app-result>
     </div>
   </div>
 </div>

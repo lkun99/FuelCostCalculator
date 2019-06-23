@@ -2,7 +2,7 @@
   <div class="row p-3">
     <div class="d-flex flex-column col-lg-12">
       <label for="distance">Odległóść [km]</label>
-      <input [(ngModel)]="distance" type="number" name="distance" min="1" class="form-control" id="distance" (onchange)="getDistance()">
+      <input [(ngModel)]="distance" type="number" name="distance" min="1" class="form-control" id="distance" (keyup)="getDistance()" (mouseup)="getDistance()">
     </div>
   </div>
 

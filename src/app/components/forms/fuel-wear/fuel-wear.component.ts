@@ -9,14 +9,15 @@ export class FuelWearComponent implements OnInit {
 
   @Output()
   wearOut: EventEmitter<number> = new EventEmitter();
-  public wear: number;
+  public wear = 6;
 
   constructor() { }
 
   ngOnInit() {
+    this.getWear();
   }
 
-  getPrice() {
+  getWear() {
     this.wearOut.emit(this.wear);
   }
 }

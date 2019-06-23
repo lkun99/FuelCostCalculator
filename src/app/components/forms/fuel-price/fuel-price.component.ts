@@ -11,9 +11,10 @@ export class FuelPriceComponent implements OnInit {
 
   @Output()
   priceOut: EventEmitter<number> = new EventEmitter();
-  public price: number;
+  public price = 5.25;
 
   ngOnInit() {
+    this.getPrice();
   }
 
   getPrice() {

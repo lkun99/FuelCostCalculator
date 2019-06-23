@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import {Datas} from '../../../models/Datas';
-import { FuelPriceComponent } from '../../forms/fuel-price/fuel-price.component';
+import { CalculatorService } from 'src/app/services/calculator.service';
+import { Bars } from 'src/app/models/Bars';
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
@@ -8,20 +9,40 @@ import { FuelPriceComponent } from '../../forms/fuel-price/fuel-price.component'
 })
 export class FormsComponent implements OnInit {
   @Input()
-  private price;
+  public price: number;
   @Input()
-  private warn;
+  public wear: number;
   @Input()
-  private distance;
+  public distance: number;
 
-  private data: Array<Datas>;
+  private data: Datas;
+  public cost: number;
+  public dashboard: Bars;
 
-  constructor() { }
+  constructor(private calculator: CalculatorService) { }
 
   ngOnInit() {
   }
-
-  getData(){
-
+  getPrice(event) {
+    this.price = event;
   }
+    getWear(event) {
+    this.wear = event;
+  }
+    getDistance(event) {
+    this.distance = event;
+  }
+  getData() {
+    this.data = {
+      fuelPrice: this.price,
+      fuelWear: this.wear,
+      distance: this.distance
+    };
+    const res = this.calculator.calculate(this.data);
+    this.cost = res;
+  }
+  getDashboard() {
+    this.dashboard = this.calculator.dashboard(this.data);
+    console.log(this.dashboard);
+    }
 }

@@ -8,7 +8,7 @@ export class DistanceComponent implements OnInit {
 
   @Output()
   distanceOut: EventEmitter<number> = new EventEmitter();
-  public distance: number;
+  public distance: number = 25;
 
 
 
@@ -19,7 +19,7 @@ export class DistanceComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.getDistance();
   }
 
 }
