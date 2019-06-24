@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,SimpleChanges } from '@angular/core';
 import { Bars } from 'src/app/models/Bars';
 
 @Component({
@@ -8,15 +8,22 @@ import { Bars } from 'src/app/models/Bars';
 })
 export class ResultComponent implements OnInit {
   @Input()
-  cost: number;
+  cost: number = 0;
   @Input()
   dashboard: Bars;
 
-
+  private costIn: number = 0;
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void  {
+    console.log(this.cost);
+    if(this.cost !== undefined) {
+      
+      this.costIn = this.cost;
+    }
+  }
   ngOnInit() {
-
+    
     }
 
 }

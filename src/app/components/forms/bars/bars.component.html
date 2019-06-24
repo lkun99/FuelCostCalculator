@@ -1,16 +1,16 @@
 <h6>Cena paliwa</h6>
 <div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="50" aria-valuemin="0"
+  <div class="progress-bar" role="progressbar" [ngStyle]="{'width': priceWidth, 'background-color': priceColor}" aria-valuenow="50" aria-valuemin="0"
     aria-valuemax="100"></div>
 </div>
 <h6>Spalanie</h6>
 <div class="progress">
-  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="75" aria-valuemin="0"
+  <div class="progress-bar" role="progressbar" [ngStyle]="{'width': wearWidth, 'background-color': wearColor}" aria-valuenow="75" aria-valuemin="0"
     aria-valuemax="100"></div>
 </div>
 <h6>Odległość</h6>
 <div class="progress">
-  <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="100" aria-valuemin="0"
+  <div class="progress-bar" role="progressbar" [ngStyle]="{'width': distanceWidth, 'background-color': distanceColor}" aria-valuenow="100" aria-valuemin="0"
     aria-valuemax="100"></div>
 </div>
 

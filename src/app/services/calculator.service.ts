@@ -16,7 +16,7 @@ export class CalculatorService {
     return cost;
   }
   dashboard(data: Datas): Bars {
-    let priceFac = data.fuelPrice - 4.7;
+    let priceFac = (data.fuelPrice - 4.8);
     let wearFac = (data.fuelWear - 2) / 10;
     let distanceFac = data.distance / 50;
     priceFac = this.control(priceFac);
@@ -34,7 +34,7 @@ export class CalculatorService {
     if(item > 1) {
       item = 1;
     } else if(item < 0) {
-      item = 0;
+      item = 0.005;
     }
     return item;
   }

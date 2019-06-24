@@ -43,6 +43,8 @@ export class FormsComponent implements OnInit {
   }
   getDashboard() {
     this.dashboard = this.calculator.dashboard(this.data);
-    console.log(this.dashboard);
     }
+    scrollToElement(): void {
+      const element = document.querySelector("#result");
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })    }
 }
